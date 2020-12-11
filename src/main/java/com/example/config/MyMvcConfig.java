@@ -1,6 +1,7 @@
 package com.example.config;
 
 
+import com.example.component.LoginHandlerInterceptor;
 import com.example.component.MyLocaleResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,6 +27,15 @@ public class MyMvcConfig implements WebMvcConfigurer  {
             public void addViewControllers(ViewControllerRegistry registry) {
                 registry.addViewController("/").setViewName("login");
                 registry.addViewController("/index.html").setViewName("login");
+                //配置这个是为了登录的时候重定向，防止出现重复请求登录的情况（F5的时候会出现）
+                registry.addViewController("/main.html").setViewName("dashboard");
+            }
+
+            @Override
+            public void addInterceptors(InterceptorRegistry registry) {
+                //excludePathPatterns除外的意思
+                registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
+                        .excludePathPatterns("/","/index.html","/login/user","/asserts/**","/webjars/**");
             }
         };
         return configurer;
