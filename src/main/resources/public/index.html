@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 访问当前项目的任何资源，都去（静态资源的文件夹）找映射
+"classpath:/META-INF/resources/",
+"classpath:/resources/",
+"classpath:/static/",
+"classpath:/public/"
+"/"：当前项目的根路径
+
+如果自己定义了静态路径，那么上面的路径就访问不了。
+自定义的话,可以在application中进行配置，spring.resources.static-locations=classpath:/image,classpath:/mv
+
+目前只有一个index.html,Springboot默认找到这个首页，
+并且resources中的favicon.ico，这个是网页打开时浏览器页签那边显示的图标(固定写成这个名称),如百度的图标。
+-->
+<h1>首页</h1>
+</body>
+</html>
