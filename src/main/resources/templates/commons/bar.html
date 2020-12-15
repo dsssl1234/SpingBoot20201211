@@ -5,22 +5,24 @@
     <title>Title</title>
 </head>
 <body>
-<!--topbar-->
+<!--topbar 导航栏-->
+<!--fragment抽取，把这端代码汇整成组件-->
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0" th:fragment="topbar">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">[[${session.loginUser}]]</a>
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#">Sign out</a>
+            <a class="nav-link" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#"  th:href="@{/user/out}">注销</a>
         </li>
     </ul>
 </nav>
 
-<!--sidebar-->
+<!--sidebar 侧边栏-->
 <nav class="col-md-2 d-none d-md-block bg-light sidebar" id="sidebar">
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
             <li class="nav-item">
+            <!--active点击的时候变亮    根据传递的值进行判断,是否让标题变亮-->
                 <a class="nav-link active"
                    th:class="${activeUri=='main.html'?'nav-link active':'nav-link'}"
                    href="#" th:href="@{/main.html}">
@@ -30,7 +32,7 @@
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                         <polyline points="9 22 9 12 15 12 15 22"></polyline>
                     </svg>
-                    Dashboard <span class="sr-only">(current)</span>
+                    首页 <span class="sr-only">(current)</span>
                 </a>
             </li>
             <li class="nav-item">

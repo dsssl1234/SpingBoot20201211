@@ -27,4 +27,5 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
 
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception {
     }
+
 }

@@ -9,10 +9,10 @@
 
     <title>Dashboard Template for Bootstrap</title>
     <!-- Bootstrap core CSS -->
-    <link href="asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.css}" rel="stylesheet">
+    <link  th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="asserts/css/dashboard.css" th:href="@{/asserts/css/dashboard.css}" rel="stylesheet">
+    <link  th:href="@{/css/dashboard.css}" rel="stylesheet">
     <style type="text/css">
         /* Chart.js */
 
@@ -47,6 +47,8 @@
 <div class="container-fluid">
     <div class="row">
         <!--引入sidebar-->
+        <!--  replace表示替换，会从 commons/bar路径下 th:fragment="topbar"的组件，然后进行替换，
+        其中(activeUri='main.html')表现携带参数，activeUri表示属性值     -->
         <div th:replace="commons/bar::#sidebar(activeUri='main.html')"></div>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="chartjs-size-monitor"
@@ -100,13 +102,13 @@
         th:src="@{/webjars/bootstrap/4.0.0/js/bootstrap.js}"></script>
 
 <!-- Icons -->
-<script type="text/javascript" src="asserts/js/feather.min.js" th:src="@{/asserts/js/feather.min.js}"></script>
+<script type="text/javascript"  th:src="@{/js/feather.min.js}"></script>
 <script>
     feather.replace()
 </script>
 
 <!-- Graphs -->
-<script type="text/javascript" src="asserts/js/Chart.min.js" th:src="@{/asserts/js/Chart.min.js}"></script>
+<script type="text/javascript"  th:src="@{/js/Chart.min.js}"></script>
 <script>
     var ctx = document.getElementById("myChart");
     var myChart = new Chart(ctx, {

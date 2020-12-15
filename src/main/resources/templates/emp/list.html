@@ -10,10 +10,10 @@
 
     <title>Dashboard Template for Bootstrap</title>
     <!-- Bootstrap core CSS -->
-    <link href="asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.css}" rel="stylesheet">
+    <link  th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="asserts/css/dashboard.css" th:href="@{/asserts/css/dashboard.css}" rel="stylesheet">
+    <link  th:href="@{/css/dashboard.css}" rel="stylesheet">
     <style type="text/css">
         /* Chart.js */
 
@@ -69,16 +69,19 @@
                     </thead>
                     <tbody>
                     <tr th:each="emp:${emps}">
-                        <td th:text="${emp.id}"></td>
+                        <td th:text="${emp.getId()}"></td>
                         <td>[[${emp.lastName}]]</td>
-                        <td th:text="${emp.email}"></td>
+                        <td th:text="${emp.getEmail()}"></td>
                         <td th:text="${emp.gender}==0?'女':'男'"></td>
                         <td th:text="${emp.department.departmentName}"></td>
                         <td th:text="${#dates.format(emp.birth, 'yyyy-MM-dd HH:mm')}"></td>
                         <td>
                             <a class="btn btn-sm btn-primary" th:href="@{/emp/}+${emp.id}">编辑</a>
+                            <!-- 使用这个方法需要在配置文件中加入这句话spring.mvc.hiddenmethod.filter.enabled=true-->
                             <button th:attr="del_uri=@{/emp/}+${emp.id}" class="btn btn-sm btn-danger deleteBtn">删除
                             </button>
+                            <!--a标签链接删除-->
+<!--                            <a class="btn btn-sm btn-danger deleteBtn" th:href="@{/delect/}+${emp.id}">编辑</a>-->
                         </td>
                     </tr>
                     </tbody>
@@ -94,15 +97,15 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script type="text/javascript" src="asserts/js/jquery-3.2.1.slim.min.js"
-        th:src="@{/webjars/jquery/3.3.1/jquery.js}"></script>
-<script type="text/javascript" src="asserts/js/popper.min.js"
-        th:src="@{/webjars/popper.js/1.11.1/dist/popper.js}"></script>
-<script type="text/javascript" src="asserts/js/bootstrap.min.js"
-        th:src="@{/webjars/bootstrap/4.0.0/js/bootstrap.js}"></script>
+<script type="text/javascript"
+        th:src="@{/webjars/jquery/3.5.1/jquery.js}"></script>
+<script type="text/javascript"
+        th:src="@{/js/popper.min.js}"></script>
+<script type="text/javascript"
+        th:src="@{/js/bootstrap.min.js}"></script>
 
 <!-- Icons -->
-<script type="text/javascript" src="asserts/js/feather.min.js" th:src="@{/asserts/js/feather.min.js}"></script>
+<script type="text/javascript"  th:src="@{/js/feather.min.js}"></script>
 <script>
     feather.replace()
 </script>

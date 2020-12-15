@@ -17,7 +17,7 @@ public class EmployeeDao {
 
     @Autowired
     private DepartmentDao departmentDao;
-
+    //static是优先加载的，才初始化departmentDao，所以需要new Department(101, "D-AA")
     static {
         employees = new HashMap<Integer, Employee>();
 
