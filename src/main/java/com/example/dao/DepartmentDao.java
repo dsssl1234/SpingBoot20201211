@@ -3,6 +3,7 @@ package com.example.dao;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+
 import com.example.entities.Department;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -28,6 +29,7 @@ public class DepartmentDao {
     public Collection<Department> getDepartments() {
         return departments.values();
     }
+
     //通过id获得部门
     public Department getDepartment(Integer id) {
         return departments.get(id);

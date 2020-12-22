@@ -10,10 +10,10 @@
 
     <title>Dashboard Template for Bootstrap</title>
     <!-- Bootstrap core CSS -->
-    <link  th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link  th:href="@{/css/dashboard.css}" rel="stylesheet">
+    <link th:href="@{/css/dashboard.css}" rel="stylesheet">
     <style type="text/css">
         /* Chart.js */
 
@@ -81,7 +81,7 @@
                             <button th:attr="del_uri=@{/emp/}+${emp.id}" class="btn btn-sm btn-danger deleteBtn">删除
                             </button>
                             <!--a标签链接删除-->
-<!--                            <a class="btn btn-sm btn-danger deleteBtn" th:href="@{/delect/}+${emp.id}">编辑</a>-->
+                            <!--                            <a class="btn btn-sm btn-danger deleteBtn" th:href="@{/delect/}+${emp.id}">编辑</a>-->
                         </td>
                     </tr>
                     </tbody>
@@ -105,7 +105,7 @@
         th:src="@{/js/bootstrap.min.js}"></script>
 
 <!-- Icons -->
-<script type="text/javascript"  th:src="@{/js/feather.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/feather.min.js}"></script>
 <script>
     feather.replace()
 </script>

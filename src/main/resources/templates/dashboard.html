@@ -9,10 +9,10 @@
 
     <title>Dashboard Template for Bootstrap</title>
     <!-- Bootstrap core CSS -->
-    <link  th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link  th:href="@{/css/dashboard.css}" rel="stylesheet">
+    <link th:href="@{/css/dashboard.css}" rel="stylesheet">
     <style type="text/css">
         /* Chart.js */
 
@@ -102,13 +102,13 @@
         th:src="@{/webjars/bootstrap/4.0.0/js/bootstrap.js}"></script>
 
 <!-- Icons -->
-<script type="text/javascript"  th:src="@{/js/feather.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/feather.min.js}"></script>
 <script>
     feather.replace()
 </script>
 
 <!-- Graphs -->
-<script type="text/javascript"  th:src="@{/js/Chart.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/Chart.min.js}"></script>
 <script>
     var ctx = document.getElementById("myChart");
     var myChart = new Chart(ctx, {
