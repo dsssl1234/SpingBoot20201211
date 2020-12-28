@@ -16,6 +16,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
     //试图跳转
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
+        //配置这个是为了登录的时候重定向，防止出现重复请求登录的情况（F5的时候会出现）
         registry.addViewController("/atguigu").setViewName("success");
         //registry.addViewController("/").setViewName("login");
         //registry.addViewController("/index.html").setViewName("login");
@@ -44,7 +45,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
     }
 
     //自定义了一个试图解析器,如果想自定义一些功能，只要写这个组件，然后交给springboot，会帮我们自动装配
-    //这个是一个过滤去的试图
+    //这个是一个过滤器的试图
     @Bean
     public LocaleResolver localeResolver() {
         return new MyLocaleResolver();
